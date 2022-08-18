@@ -1,5 +1,14 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
-  "title": "#1 - Lab X.1 Put Lab Title Here",
-  "steps": []
+  "title": "#1 - Lab 8-1 Implement Authentication with an External IdP",
+  "steps": [
+    {
+      "title": "Lab Overview",
+      "description": "## Lab 8-1: Implement Authentication with an External IdP\n\n🎯 Objective: \n\n⏱️ Duration: "
+    },
+    {
+      "title": "Lab Checkpoint",
+      "description": "## ✅ Checkpoint\n\nAt this point, "
+    }
+  ]
 }
