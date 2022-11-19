@@ -20,7 +20,7 @@
     },
     {
       "title": "Add a New SAML 2.0 Identity Provider (IdP)",
-      "description": "## Add a New SAML 2.0 Identity Provider (IdP)\n\nWe'll use our service account to add an AD FS as a SAML 2.0 IdP.\n\n1. Open Chrome and log in to your Okta org as `okta.service@oktaice.com` / `Tra!nme4321!`\n2. From the Admin menu, go to `Security` > `Identity Providers`\n3. Click `Add Identity Provider`\n4. Select `SAML 2.0 IdP`\n5. Click `Next`"
+      "description": "## Add a New SAML 2.0 Identity Provider (IdP)\n\nWe'll use our service account to add an AD FS as a SAML 2.0 IdP.\n\n1. Open Chrome and log in to the Okta Admin Dashboard as `oktatraining`\n2. From the Admin menu, go to `Security` > `Identity Providers`\n3. Click `Add Identity Provider`\n4. Select `SAML 2.0 IdP`\n5. Click `Next`"
     },
     {
       "title": "Configure the SAML 2.0 IdP",
@@ -28,11 +28,11 @@
     },
     {
       "title": "Configure IdP Routing Rules",
-      "description": "## Configure IdP Routing Rules\n\n1. Click the `Routing rules` tab\n2. Click `Add Routing Rule`\n   **TODO**"
+      "description": "## Configure IdP Routing Rules\nWe're going to create a routing rule that tells Okta to use AD FS as our IdP for any user that logs in with an `oktaice.local` email address.\n\n1. Click the `Routing rules` tab\n2. Click `Add Routing Rule`\n3. Name the rule `AD FS Rule`\n4. Next to **User matches** select `Domain list on login` and, in the field that appears beneath, type in `oktaice.local`\n5. In the **Use this identity provider** section, keep `Use specific IdP(s) selected.\n6. In the **IdPs** section at the bottom, remove `Okta` by clicking the `X` and then type and select `AD FS`\n7. Click `Create rule`"
     },
     {
       "title": "Download the Metadata",
-      "description": "## Download the Metadata\n\n1. After finishing the previous step, the **Identity Providers** table will now have an entry named `AD FS`\n\n2. Expand the `AD FS` entry\n\n3. Click `Download metadata` and the `metadata.xml` file will be saved to your `Downloads` folder."
+      "description": "## Download the Metadata\n1. Click on the `Identity providers` tab\n\n2. In the table of identity providers, click the arrow next to the `AD FS` entry to expand it.\n\n3. Click `Download metadata` and the `metadata.xml` file will be saved to your `Downloads` folder."
     },
     {
       "title": "Register Okta as a Relying Party in AD FS",
@@ -47,8 +47,12 @@
       "description": "## Create a Relying Party Identifier in AD FS for Okta Ice\n\nThe Relying party identifier is used to trigger a login without passing by a select Relying Party form in AD FS.\n\n1. In **AD FS Management**, go to `AD FS` > `Trust Relationships` > `Relying Party Trusts`\n2. Right-click `Okta Ice` and then click `Properties`\n3. Click the `Identifiers` tab.\n4. Enter `OktaIce` as `Relying party identifier` and click `Add`\n   OktaIce will be listed under the Relying party identifier text box.\n\n5. Click `OK`"
     },
     {
-      "title": "Verify the Results",
-      "description": "## Verify the Results\n\n**Change to app initiated**\n\n1. In Chrome, launch an incognito window.\n2. Go to https://adfs.oktaice.local/adfs/ls/idpinitiatedsignon?loginToRp=OktaIce\n3. Login as `OKTAICE\\dsmith`.\n   After a successful login, the Okta Ice home page is displayed.\n   This confirms that AD FS as IdP is working.\n4. Close the Incognito window.\n5. Return to your Okta Ice org as `okta.service`\n6. Click `Directory` > `People`\n7. Search and open Diane Smith.\n8. Confirm that Okta displays the message **Profile sourced by SAML 2.0 IdP**.\n9. Click the `Profile` tab.\n10. Confirm that the user profile now contains the user email and name. This confirms that the Just in Time provisioning (JIT) is working."
+      "title": "Test Authentication with AD FS",
+      "description": "## Test Authentication with AD FS\n\n1. In Chrome, sign out of Okta.\n\n2. Enter `dsmith@oktaice.local` for `Username`\n\n3. Enter `Tra!nme4321` as the `Password`\n\nThe user should now be logged in via AD FS as an IdP. This should also create a new Okta-managed user via Just-in-Time (JIT) provisioning with the profile attribute mapping we set up in AD FS."
+    },
+    {
+      "title": "Verify JIT Provisioning",
+      "description": "## Verify JIT Provisioning\n1. Log out of Okta and then log back in to the Okta Admin Dashboard as `oktatraining`\n2. Click `Directory` > `People`\n3. Search and open Diane Smith.\n4. Confirm that Okta displays the message **Profile sourced by SAML 2.0 IdP**.\n5. Click the `Profile` tab.\n6. Confirm that the user profile now contains the user email and name. This confirms that the Just in Time provisioning (JIT) is working."
     },
     {
       "title": "Lab Checkpoint",
