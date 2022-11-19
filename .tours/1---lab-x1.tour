@@ -32,7 +32,7 @@
     },
     {
       "title": "Download the Metadata",
-      "description": "## Download the Metadata\n1. Click on the `Identity providers` tab\n\n2. In the table of identity providers, click the arrow next to the `AD FS` entry to expand it.\n\n3. Click `Download metadata` and the `metadata.xml` file will be saved to your `Downloads` folder."
+      "description": "## Download the Metadata\n1. Click on the `Identity providers` tab\n\n2. In the table of identity providers, click the arrow next to the `AD FS` entry to expand it.\n\n3. Click `Download metadata` and the `metadata.xml` file will be saved to your `Downloads` folder.\n\n4. **Log out of Okta**"
     },
     {
       "title": "Register Okta as a Relying Party in AD FS",
@@ -48,11 +48,11 @@
     },
     {
       "title": "Test Authentication with AD FS",
-      "description": "## Test Authentication with AD FS\n\n1. In Chrome, sign out of Okta.\n\n2. Enter `dsmith@oktaice.local` for `Username`\n\n3. Enter `Tra!nme4321` as the `Password`\n\nThe user should now be logged in via AD FS as an IdP. This should also create a new Okta-managed user via Just-in-Time (JIT) provisioning with the profile attribute mapping we set up in AD FS."
+      "description": "## Test Authentication with AD FS\n\n1. Click [here to copy the previously configured applications](command:codetour.sendTextToTerminal?[\"mkdir redirect; mkdir embedded; cp ../03-exploring-authentication-protocol-flows/redirect/* redirect; cp ../03-exploring-authentication-protocol-flows/* embedded\"]).\n\n2. Click [here to launch the web server](command:codetour.sendTextToTerminal?[\"python -m http.server 8080\"]).\n\n3. Navigate to http://localhost:8080\n\n4. Click `Rewards App (Redirect)`\n\n5. Enter `dsmith@oktaice.local` as the **Username**\n\n6. Click `Next`\n\n7. Enter `Tra!nme4321` as the password\n\n8. Click `Verify`\n\nThe user should now be logged in via AD FS as an IdP. This should also create a new Okta-managed user via Just-in-Time (JIT) provisioning with the profile attribute mapping we set up in AD FS.\n\nFinally, click `Close Okta Session`"
     },
     {
       "title": "Verify JIT Provisioning",
-      "description": "## Verify JIT Provisioning\n1. Log out of Okta and then log back in to the Okta Admin Dashboard as `oktatraining`\n2. Click `Directory` > `People`\n3. Search and open Diane Smith.\n4. Confirm that Okta displays the message **Profile sourced by SAML 2.0 IdP**.\n5. Click the `Profile` tab.\n6. Confirm that the user profile now contains the user email and name. This confirms that the Just in Time provisioning (JIT) is working."
+      "description": "## Verify JIT Provisioning\n1. Log back in to the Okta Admin Dashboard as `oktatraining`\n2. Click `Directory` > `People`\n3. Search for `Diane Smith` and click on the user\n4. Confirm that Okta displays the message **Profile sourced by SAML 2.0 IdP**.\n5. Click the `Profile` tab.\n6. Confirm that the user profile now contains the user email and name. This confirms that the Just in Time provisioning (JIT) is working."
     },
     {
       "title": "Lab Checkpoint",
