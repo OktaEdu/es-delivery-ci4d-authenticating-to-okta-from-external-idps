@@ -4,7 +4,7 @@
 
 This repo contains everything you need to complete the labs in this module:
 
-- Lab 8.1: Implement Authentication with an External IdP
+- Lab 8.1: Authenticate with AD FS as an External IdP
 
 ## How to Start the Labs
 
