@@ -12,7 +12,7 @@
     },
     {
       "title": "Validate your AD FS Configuration",
-      "description": "## Validate your AD FS Configuration\n\nIn this section, you confirm that your AD FS can authenticate users from Active Directory.\n\n1. Open Chrome and navigate to https://adfs.oktaice.local/adfs/ls/idpinitiatedsignon\n\n2. Click `Sign in`\n\n3. Sign in with `diane.smith@oktaice.com` as the **username** and `Tra!nme4321` as the **password**.\n\n4. Click `Sign in`\n\n5. Verify that sign in is successful. This verifies that AD FS is correctly configured and running on your machine.\n\n6. Sign out and close your browser."
+      "description": "## Validate your AD FS Configuration\n\nIn this section, you confirm that your AD FS can authenticate users from Active Directory.\n\n1. Open Chrome and navigate to https://adfs.oktaice.local/adfs/ls/idpinitiatedsignon\n\n2. Click `Sign in`\n\n3. Sign in with `diane.smith@oktaice.local` as the **username** and `Tra!nme4321` as the **password**.\n\n4. Click `Sign in`\n\n5. Verify that sign in is successful. This verifies that AD FS is correctly configured and running on your machine.\n\n6. Sign out and close your browser."
     },
     {
       "title": "Run the Windows Certificate Export Wizard",
