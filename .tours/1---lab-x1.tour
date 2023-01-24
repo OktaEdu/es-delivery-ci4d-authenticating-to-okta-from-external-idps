@@ -4,7 +4,7 @@
   "steps": [
     {
       "title": "Lab Overview",
-      "description": "## Lab 8.1 Authenticate with AD FS as an External IdP\n\n🎯 **Objective** Set up AD FS as an external IdP.\n\n🎬 **Scenario** Okta Ice wants to allow customers to be able to authenticate via additional external IdPs. For our proof of concept that doesn't require getting developer keys from social IdPs (e.g., Facebook or Twitter), we'll use AD FS.\n\n⏱️ **Duration** 20 minutes"
+      "description": "## Lab 8.1 Authenticate with AD FS as an External IdP\n\n🎯 **Objective** Set up AD FS as an external IdP.\n\n🎬 **Scenario** Okta Ice wants to allow customers to be able to authenticate via additional external IdPs. For our proof of concept that doesn't require getting developer keys from social IdPs (e.g., Facebook or Twitter), we'll use AD FS.\n\n⏱️ **Duration** 20 minutes\n\n⚠️ **Prerequisites:** Labs 1.2, 1.4, and 2.4"
     },
     {
       "title": "Review the Partner Organizational Unit in Active Directory",
@@ -48,7 +48,7 @@
     },
     {
       "title": "Configure an AD FS Claim Rule",
-      "description": "\nClaim rules define what user data will be sent from AD FS to Okta via SAML assertion.\n\n1. In the **Edit Claim Issuance Policy for Okta Ice** window, click `Add Rule...`\n2. Select `Send LDAP Attributes as Claims` in the **Claim rule template** drop-down and click `Next`\n3. **Name** the claim rule `Attributes to Okta`\n4. Select`Active Directory` under the **Attribute store** drop-down.\n5. Under **Mapping of LDAP attributes to outgoing claim types** add these additional attributes:\n\n| **LDAP Attribute** | **Outgoing Claim Type** |\n| ------------------ | ----------------------- |\n| `Given-Name`       | `firstName`             |\n| `Surname`          | `lastName`              |\n| `E-Mail-Addresses` | `email`                 |\n| `E-Mail-Addresses` | `Name ID`               |\n\nFinally, click `Finish` and then click `OK` in the **Edit Claim Issuance Policy for Okta Ice** window."
+      "description": "## Configure an AD FS Claim Rule \n\nClaim rules define what user data will be sent from AD FS to Okta via SAML assertion.\n\n1. In the **Edit Claim Issuance Policy for Okta Ice** window, click `Add Rule...`\n2. Select `Send LDAP Attributes as Claims` in the **Claim rule template** drop-down and click `Next`\n3. **Name** the claim rule `Attributes to Okta`\n4. Select`Active Directory` under the **Attribute store** drop-down.\n5. Under **Mapping of LDAP attributes to outgoing claim types** add these additional attributes:\n\n| **LDAP Attribute** | **Outgoing Claim Type** |\n| ------------------ | ----------------------- |\n| `Given-Name`       | `firstName`             |\n| `Surname`          | `lastName`              |\n| `E-Mail-Addresses` | `email`                 |\n| `E-Mail-Addresses` | `Name ID`               |\n\nFinally, click `Finish` and then click `OK` in the **Edit Claim Issuance Policy for Okta Ice** window."
     },
     {
       "title": "Test Authentication with AD FS",
